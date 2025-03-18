@@ -1,0 +1,7 @@
+[submodule "Engine/ThirtyParty/SDL"]
+	path = Engine/ThirtyParty/SDL
+	url = https://bgithub.xyz/liuqibei/SDL.git
+	branch = release-3.2.x
+[submodule "Engine/ThirtyParty/spdlog"]
+	path = Engine/ThirtyParty/spdlog
+	url = https://github.com/gabime/spdlog.git

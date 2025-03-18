@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/OrangeEngine.dir/Entry/Entry.cpp.o -o OrangeEngine  -Wl,-rpath,/home/leyun/CodeSpace/OrangeEngine/build/Engine/ThirtyParty/SDL ../ThirtyParty/SDL/libSDL3.so.0.2.9 
