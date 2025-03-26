@@ -1,14 +1,12 @@
 #pragma once
 
-#include "ApplicationTimestamp.hpp"
+#include "Timestamp.hpp"
 
 namespace Orange {
 
 class Event;
 
 class Application {
-    struct Private;
-
 public:
     static Application& GetInstance();
 
@@ -17,10 +15,11 @@ public:
 
     void Initialize();
     void Shutdown();
-    void Tick(ApplicationTimestamp timestamp);
+    void Tick(Timestamp timestamp);
     void ProcessEvent(Event* event);
 
 private:
+    struct Private;
     Private* d;
 };
 

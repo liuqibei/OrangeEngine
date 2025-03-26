@@ -1,0 +1,3 @@
+file(GLOB_RECURSE BASE_MATH_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/*.hpp")
+
+add_library(Orange.Base.Math ${BASE_MATH_SOURCES})

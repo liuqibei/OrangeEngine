@@ -4,9 +4,9 @@
 
 namespace Orange {
 
-class ApplicationTimestamp {
+class Timestamp {
 public:
-    ApplicationTimestamp(uint64_t start, uint64_t delta) : _start(start), _delta(delta) {}
+    Timestamp(uint64_t start, uint64_t delta) : _start(start), _delta(delta) {}
 
     uint64_t GetStart() const
     {

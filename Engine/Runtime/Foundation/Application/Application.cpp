@@ -1,6 +1,5 @@
 #include "Application.hpp"
 
-#include "ApplicationWindow.hpp"
 #include "Foundation/Logger/Logger.hpp"
 
 namespace Orange {
@@ -26,10 +25,6 @@ Application::~Application()
 void Application::Initialize()
 {
     LOGI("Application initialized");
-
-    static auto window = ApplicationWindow();
-    window.SetTitle("Orange Engine1111");
-    window.Maximize();
 }
 
 void Application::Shutdown()
@@ -37,7 +32,7 @@ void Application::Shutdown()
     LOGI("Application shutdown");
 }
 
-void Application::Tick(ApplicationTimestamp timestamp)
+void Application::Tick(Timestamp timestamp)
 {
     LOGT("Application tick, start: {}ms, delta: {}ms", timestamp.GetStart(), timestamp.GetDelta());
 }

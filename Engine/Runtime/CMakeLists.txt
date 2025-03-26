@@ -1,12 +1,7 @@
-file(GLOB_RECURSE RUNTIME_SOURCES "*.cpp" "*.hpp")
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-add_executable(OrangeEngine ${RUNTIME_SOURCES})
-
-set(ORANGE_ENGINE_DENPENDENCIES
-    SDL3::SDL3-shared
-    spdlog::spdlog
-)
-
-target_link_libraries(OrangeEngine PRIVATE ${ORANGE_ENGINE_DENPENDENCIES})
-
-target_include_directories(OrangeEngine PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Base/Math)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Entry)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Foundation/Application)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Foundation/Window)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Foundation/Logger)

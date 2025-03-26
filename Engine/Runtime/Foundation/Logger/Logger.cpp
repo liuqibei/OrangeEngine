@@ -2,7 +2,7 @@
 
 namespace Orange {
 
-static bool _ = Orange::SetupLogger();
+static bool g_OrangeLoggerSetupResult = Orange::SetupLogger();
 
 bool SetupLogger()
 {
