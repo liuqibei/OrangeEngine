@@ -6,5 +6,5 @@ target_link_libraries(
     Orange.Entry
     PRIVATE 
     SDL3::SDL3
-    Orange.Foundation.Application
+    Orange.Foundation
 )

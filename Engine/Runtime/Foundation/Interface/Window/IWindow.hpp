@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <string>
 
-#include "Base/Math/Size.hpp"
+#include "Math/Size.hpp"
 
 namespace Orange {
 

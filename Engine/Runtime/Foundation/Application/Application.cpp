@@ -1,6 +1,6 @@
-#include "Application.hpp"
+#include "Application/Application.hpp"
 
-#include "Foundation/Logger/Logger.hpp"
+#include "Logger/Logger.hpp"
 
 namespace Orange {
 

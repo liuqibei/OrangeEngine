@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../IWindow.hpp"
+#include "Window/IWindow.hpp"
 
 namespace Orange {
 
@@ -8,6 +8,9 @@ class SDLWindow final : public IWindow {
     friend class WindowManager;
 
 public:
+    SDLWindow();
+    ~SDLWindow();
+
     uint64_t GetId() const override;
 
     void SetTitle(const std::string& title) override;
@@ -24,9 +27,6 @@ public:
     void Close() override;
 
 private:
-    SDLWindow();
-    ~SDLWindow();
-
     struct Private;
     Private* d;
 };

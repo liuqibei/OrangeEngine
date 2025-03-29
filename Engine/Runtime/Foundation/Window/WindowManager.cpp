@@ -1,10 +1,10 @@
 #include "WindowManager.hpp"
 
-#include <SDL3/SDL.h>
 #include <memory>
 #include <unordered_map>
 
-#include "SDL/SDLWindow.hpp"
+#include "Window/IWindow.hpp"
+#include "Window/Window.hpp"
 
 namespace Orange {
 
@@ -20,19 +20,17 @@ WindowManager& WindowManager::GetInstance()
 
 bool WindowManager::Initialize()
 {
-    return SDL_Init(SDL_INIT_VIDEO) == 0;
+    return true;
 }
 
 void WindowManager::Shutdown()
 {
     d->windows.clear();
-
-    SDL_Quit();
 }
 
 IWindow* WindowManager::Create()
 {
-    auto window = new SDLWindow();
+    auto window = CreateWindow();
     d->windows.emplace(window->GetId(), window);
     return window;
 }
