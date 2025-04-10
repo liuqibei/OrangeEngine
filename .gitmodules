@@ -5,3 +5,7 @@
 [submodule "Engine/ThirtyParty/spdlog"]
 	path = Engine/ThirtyParty/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "Engine/ThirtyParty/tinyxml2"]
+	path = Engine/ThirtyParty/tinyxml2
+	url = https://github.com/liuqibei/tinyxml2.git
+	branch = v10.0.0

@@ -13,7 +13,8 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
         return SDL_APP_FAILURE;
     }
 
-    Orange::Application::GetInstance().Initialize();
+    // Initialize the application
+    Orange::Application::GetInstance().Initialize({ argv, argv + argc });
 
     return SDL_APP_CONTINUE;
 }

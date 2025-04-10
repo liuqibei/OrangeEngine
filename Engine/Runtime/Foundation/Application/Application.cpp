@@ -1,10 +1,14 @@
 #include "Application/Application.hpp"
 
 #include "Logger/Logger.hpp"
+#include "Window/WindowManager.hpp"
 
 namespace Orange {
 
-struct Application::Private {};
+struct Application::Private {
+    std::vector<std::string> args;
+    IScene* mainScene = nullptr;
+};
 
 Application& Application::GetInstance()
 {
@@ -22,14 +26,25 @@ Application::~Application()
     delete d;
 }
 
-void Application::Initialize()
+void Application::Initialize(const std::vector<std::string>& args)
 {
     LOGI("Application initialized");
+
+    d->args = args;
+
+    // Initialize the window manager
+    if (!WindowManager::GetInstance().Initialize()) {
+        LOGE("Failed to initialize window manager");
+        return;
+    }
 }
 
 void Application::Shutdown()
 {
     LOGI("Application shutdown");
+
+    // Shutdown the window manager
+    WindowManager::GetInstance().Shutdown();
 }
 
 void Application::Tick(Timestamp timestamp)

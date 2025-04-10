@@ -1,10 +1,14 @@
 #pragma once
 
-#include "Timestamp.hpp"
+#include <string>
+#include <vector>
+
+#include "Common/Timestamp.hpp"
 
 namespace Orange {
 
 class Event;
+class IScene;
 
 class Application {
 public:
@@ -13,10 +17,13 @@ public:
     Application();
     ~Application();
 
-    void Initialize();
+    void Initialize(const std::vector<std::string>& args = {});
     void Shutdown();
     void Tick(Timestamp timestamp);
     void ProcessEvent(Event* event);
+
+    void SetMainScene(IScene* scene);
+    IScene* GetMainScene() const;
 
 private:
     struct Private;

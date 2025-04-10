@@ -7,6 +7,11 @@ target_include_directories(Orange.Foundation
     ${CMAKE_CURRENT_SOURCE_DIR}/Interface
 )
 
+target_include_directories(Orange.Foundation
+    PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
 target_link_libraries(Orange.Foundation
     PUBLIC
     spdlog

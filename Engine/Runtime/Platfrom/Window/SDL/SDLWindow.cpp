@@ -10,6 +10,7 @@ struct SDLWindow::Private {
 
 uint64_t SDLWindow::GetId() const
 {
+    // TODO: get native window handle
     return reinterpret_cast<uint64_t>(d->window);
 }
 
