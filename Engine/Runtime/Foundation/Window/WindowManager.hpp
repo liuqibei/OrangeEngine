@@ -17,6 +17,8 @@ public:
 
     void Destroy(uint64_t id);
 
+    IWindow* GetWindow(uint64_t id) const;
+
 private:
     WindowManager();
     ~WindowManager();

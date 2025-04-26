@@ -3,11 +3,15 @@
 #include "Logger/Logger.hpp"
 #include "Window/WindowManager.hpp"
 
+#include "Render/RenderContext.h"
+
 namespace Orange {
+
+using namespace Orange::Render;
 
 struct Application::Private {
     std::vector<std::string> args;
-    IScene* mainScene = nullptr;
+    IWindow* mainWindow = nullptr;
 };
 
 Application& Application::GetInstance()
@@ -37,11 +41,23 @@ void Application::Initialize(const std::vector<std::string>& args)
         LOGE("Failed to initialize window manager");
         return;
     }
+
+    // Create Main Window
+    d->mainWindow = WindowManager::GetInstance().Create();
+
+    // Initialize the render system
+    if (!RenderContext::GetInstance().Initialize()) {
+        LOGE("Failed to initialize render system");
+        return;
+    }
 }
 
 void Application::Shutdown()
 {
     LOGI("Application shutdown");
+
+    // Shutdown the render system
+    RenderContext::GetInstance().Shutdown();
 
     // Shutdown the window manager
     WindowManager::GetInstance().Shutdown();

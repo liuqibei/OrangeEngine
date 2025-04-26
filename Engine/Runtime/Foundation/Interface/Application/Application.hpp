@@ -22,9 +22,6 @@ public:
     void Tick(Timestamp timestamp);
     void ProcessEvent(Event* event);
 
-    void SetMainScene(IScene* scene);
-    IScene* GetMainScene() const;
-
 private:
     struct Private;
     Private* d;

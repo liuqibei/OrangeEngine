@@ -68,5 +68,6 @@ private:
 
 using SizeI = Size<int32_t>;
 using SizeF = Size<float>;
+using SizeD = Size<double>;
 
 } // namespace Orange

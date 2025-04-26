@@ -6,7 +6,7 @@ namespace Orange {
 
 class Uri {
 public:
-    Uri() = default;
+    Uri() {}
     Uri(const std::string& uri);
 
     bool IsValid() const
@@ -25,8 +25,8 @@ public:
     }
 
 private:
-    std::string _uri;
-    SchemeType _scheme;
+    std::string _uri = "";
+    SchemeType _scheme = SchemeType::Unknown;
 };
 
 } // namespace Orange

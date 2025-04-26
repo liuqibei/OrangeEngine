@@ -34,7 +34,7 @@ SDL_AppResult SDL_AppIterate(void* appstate)
     static uint64_t lastTick = SDL_GetTicks();
     uint64_t now             = SDL_GetTicks();
 
-    Orange::Application::GetInstance().Tick({ lastTick, now - lastTick });
+    Orange::Application::GetInstance().Tick({ now, now - lastTick });
 
     lastTick = now;
     return SDL_APP_CONTINUE;

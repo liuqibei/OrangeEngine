@@ -1,5 +1,3 @@
-#include "Window/Window.hpp"
-
 #include "SDL/SDLWindow.hpp"
 
 namespace Orange {
