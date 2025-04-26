@@ -10,3 +10,7 @@
 	path = Engine/ThirtyParty/tinyxml2
 	url = https://github.com/liuqibei/tinyxml2.git
 	branch = v10.0.0
+[submodule "Engine/ThirtyParty/rapidjson"]
+	path = Engine/ThirtyParty/rapidjson
+	url = https://github.com/liuqibei/rapidjson
+	branch = master
